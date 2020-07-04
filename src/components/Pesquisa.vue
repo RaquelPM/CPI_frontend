@@ -7,11 +7,20 @@
                     <p class="mr-2">Crie, Pesquise,</p>
                     <p class="font-weight-bold" >Inove</p>
                 </div>
-                <p id="description" class="text-italic" > Desenvolva projetos de pesquisa de forma simples, rápida e organizada</p>
+                <p id="description" class="text-center font-weight-light font-italic" > Desenvolva projetos de pesquisa de forma simples, rápida e organizada</p>
             </div>
-            <div class="d-flex w-50 mt-3 justify-content-center" >
-                <input v-on:click="pesq" placeholder="Eletrônica, Biologia.." class="input w-75 pl-2" id="input"  />
-                <button id="bt_pes" class="btn">a</button>
+            <div class="d-flex flex-column w-50 mt-3 align-items-center">
+                <div class="w-100 d-flex justify-content-center">
+                    <input v-on:click="pesq" placeholder="Eletrônica, Biologia.." class="bord_input ubuntu w-100 pl-2" id="input"  />
+                    <button id="bt_pes" class="btn">a</button>
+                </div>
+                <v-combobox
+                    v-if="!pesquisa"
+                    class="w-100 mt-3"
+                    :items="[{value: 0, text: 'Option 1'}, {value: 1, text: 'Option 2'}, {value: 2, text: 'Option 3'}]"
+                    item-value="value"
+                    label="Opções de filtro"
+                ></v-combobox>
             </div>
             <img  width="230" height="170" class="mt-3" src="@/assets/Icon_PC.svg"/>
         </div>
@@ -29,7 +38,8 @@ import Nav from './Nav.vue';
     }
 })
 export default class Pesquisa extends Vue {
-    pesquisa=true;
+    pesquisa=false;
+    items: Array<string> = ['Foo', 'Bar', 'Fizz', 'Buzz'];
 
     pesq (): void {
         this.pesquisa=!this.pesquisa
@@ -37,6 +47,7 @@ export default class Pesquisa extends Vue {
     }
     
     created(){
+        console.log(this.items)
         this.pesq();
     }
 }
@@ -61,17 +72,14 @@ export default class Pesquisa extends Vue {
 }
 #description{
     font-size:30px;
-    font-family:Roboto;
+    font-family: 'Roboto', sans-serif;
 }
 
 #input{
     height:40px;
-    border-color:#6CB2B2;
     border-top-left-radius: 7px;
     border-bottom-left-radius: 7px;
     font-size:20px;
-    font-family: Ubuntu;
-    outline:none;
 }
 
 #bt_pes{
