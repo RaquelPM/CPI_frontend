@@ -42,6 +42,12 @@
           <div class="w-100 px-2">
             <input required type="password" placeholder="senha" class=" input_form_gray ubuntu input_form pl-3 w-100 mt-3"/>
           </div>
+          <div class="w-100 px-2 my-3">
+            <!-- Custom select -->
+            <CustomInput placeholder="Teste" name="Teste" >
+              <span class="text-white">></span>
+            </CustomInput>
+          </div>
           <div class="d-flex w-100 justify-content-end mb-5">
             <a id="link_esqueci" class="ubuntu mt-1 font-weight-bold mr-2 mb-5">Esqueceu a senha?</a>
           </div>
@@ -78,15 +84,23 @@
 
 <script lang="ts">
 import { Component, Vue, Prop} from 'vue-property-decorator';
+import Inputs from './Input.vue';
 
-@Component
+@Component({
+    components: {
+      CustomInput: Inputs
+    }
+  })
+
 export default class Nav extends Vue {
   @Prop() pesquisa!: boolean
 
   drawer=false;
   cadastro=false;
+
 }
 </script>
+
 
 <style>
 
