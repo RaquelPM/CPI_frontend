@@ -1,11 +1,30 @@
 <template>
   <div class="w-100 d-flex">
     <div class="w-50 d-flex justify-content-start">
-      <img v-bind:class="{search:!pesquisa, nosearch:pesquisa}" id="logo" class="nosearch mt-3 ml-5" src="@/assets/Logo_CPI.svg"/>
+      <img 
+        v-bind:class="{search:!pesquisa, nosearch:pesquisa}"
+        id="logo"
+        class="nosearch mt-3 ml-5"
+        src="@/assets/Logo_CPI.svg"
+      />
     </div>
     <div class="w-50 d-flex justify-content-end mt-5">
-      <button v-bind:class="{btn_pesquisa:pesquisa, btn_nopesquisa:!pesquisa}"  @click.stop="drawer = !drawer" id="b_lo" class="btn ubuntu">Login</button> 
-      <button v-bind:class="{btn_pesquisa:pesquisa, btn_nopesquisa:!pesquisa}" @click.stop="cadastro = !cadastro" id="b_ca" class="btn ml-3 mr-5 text-white ubuntu">Cadastro</button> 
+      <button
+        id="b_lo"
+        v-bind:class="{btn_pesquisa:pesquisa, btn_nopesquisa:!pesquisa}"
+        @click.stop="drawer = !drawer"
+        class="btn ubuntu font-weight-bold"
+      >
+        Login
+      </button> 
+      <button
+        v-bind:class="{btn_pesquisa:pesquisa, btn_nopesquisa:!pesquisa}"
+        @click.stop="cadastro = !cadastro"
+        id="b_ca"
+        class="btn ml-3 mr-5 text-white ubuntu font-weight-bold"
+      >
+        Cadastro
+      </button> 
     </div>
 
     <v-navigation-drawer
@@ -72,7 +91,7 @@ export default class Nav extends Vue {
 <style>
 
 .btns_sub{
-  background-color:#6CB2B2;
+  background-color: var(--primary);
   border-radius:6px;
   font-size:19px;
 }
@@ -80,7 +99,7 @@ export default class Nav extends Vue {
 #button_proxi{
   width:180px;
   height:50px;
-  background-color:#6CB2B2;
+  background-color: var(--primary);
 }
 
 #criar_senha{
@@ -109,7 +128,7 @@ export default class Nav extends Vue {
 }
 
 #quadrado{
-  background-color:#6CB2B2;
+  background-color: var(--primary);
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
@@ -120,21 +139,20 @@ export default class Nav extends Vue {
 }
 
 .nosearch{
-  transition: max-width 0.7s;
+  transition: max-width 0.4s;
   overflow: hidden;
-  max-width: 180px;
+  max-width: 150px;
 }
 
 .search{
-  transition: max-width 0.7s;
+  transition: max-width 0.4s;
   overflow: hidden;
   max-width: 100px;
 }
 
 .btn_nopesquisa{
   outline:none;
-  transition: max-width 0.7s;
-  transition: height 0.7s;
+  transition: max-width 0.4s, height 0.4s;
   overflow: hidden;
   font-size: 18px;
   height:40px;
@@ -144,8 +162,7 @@ export default class Nav extends Vue {
 
 .btn_pesquisa{
   outline:none;
-  transition: max-width 0.7s;
-  transition: height 0.7s;
+  transition: max-width 0.4s, height 0.4s;
   overflow: hidden;
   font-size: 21px;
   height:50px;
@@ -153,7 +170,7 @@ export default class Nav extends Vue {
 }
 
 #b_ca{
-  background-color:#6CB2B2;
+  background-color: var(--primary);
 }
 
 .ubuntu{
@@ -161,7 +178,7 @@ export default class Nav extends Vue {
 }
 
 .bord_input{
-  border-color:#6CB2B2;
+  border-color: var(--primary);
   border-style:solid !important;
   outline:none;
 }

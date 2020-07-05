@@ -9,3 +9,8 @@ export default Vue.extend({
   name: 'App',
 });
 </script>
+
+
+<style>
+  @import url("./styles/styles.css");
+</style>

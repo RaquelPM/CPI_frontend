@@ -11,7 +11,7 @@
             </div>
             <div class="d-flex flex-column w-50 mt-3 align-items-center">
                 <div class="w-100 d-flex justify-content-center">
-                    <input v-on:click="pesq" placeholder="Eletrônica, Biologia.." class="bord_input ubuntu w-100 pl-2" id="input"  />
+                    <input v-on:click="pesq" placeholder="Eletrônica, Biologia.." class="bord_input ubuntu w-100 pl-2 py-3" id="input"  />
                     <button id="bt_pes" class="btn">a</button>
                 </div>
                 <v-combobox
@@ -22,7 +22,7 @@
                     label="Opções de filtro"
                 ></v-combobox>
             </div>
-            <img  width="230" height="170" class="mt-3" src="@/assets/Icon_PC.svg"/>
+            <img  width="200" height="150" class="mt-5" src="@/assets/Icon_PC.svg"/>
         </div>
     </div>
 </template>
@@ -54,13 +54,14 @@ export default class Pesquisa extends Vue {
 </script>
 
 <style>
+
 .sumir{
-    transition: height 0.5s;
+    transition: height 0.3s;
     overflow: hidden;
     height:0px;
 }
 .aparecer{
-    transition: height 0.5s;
+    transition: height 0.3s;
     overflow: hidden;
     height:200px;
 }
