@@ -1,3 +1,4 @@
+/* Limpeza inicial dos estilos padrão do css */
 * {
     outline: none;
     border: none;
@@ -5,7 +6,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/* Cores */
 :root {
     --primary: #6CB2B2
 }

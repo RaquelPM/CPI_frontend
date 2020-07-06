@@ -2,7 +2,7 @@
   <div class="w-100 d-flex">
     <div class="w-50 d-flex justify-content-start">
       <img 
-        v-bind:class="{search:!pesquisa, nosearch:pesquisa}"
+        v-bind:class="{ search:!pesquisa, nosearch:pesquisa }"
         id="logo"
         class="nosearch mt-3 ml-5"
         src="@/assets/Logo_CPI.svg"
@@ -11,14 +11,14 @@
     <div class="w-50 d-flex justify-content-end mt-5">
       <button
         id="b_lo"
-        v-bind:class="{btn_pesquisa:pesquisa, btn_nopesquisa:!pesquisa}"
+        v-bind:class="{ btn_pesquisa:pesquisa, btn_nopesquisa:!pesquisa }"
         @click.stop="drawer = !drawer"
         class="btn ubuntu font-weight-bold"
       >
         Login
       </button> 
       <button
-        v-bind:class="{btn_pesquisa:pesquisa, btn_nopesquisa:!pesquisa}"
+        v-bind:class="{ btn_pesquisa:pesquisa, btn_nopesquisa:!pesquisa }"
         @click.stop="cadastro = !cadastro"
         id="b_ca"
         class="btn ml-3 mr-5 text-white ubuntu font-weight-bold"

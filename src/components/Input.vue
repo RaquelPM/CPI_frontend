@@ -2,7 +2,7 @@
 <div class="position-relative d-flex">
     <!-- Input propriamente dito -->
     <input
-        v-bind:class="{leftInput: isIconLeft, rightInput: isIconRight}"
+        v-bind:class="{ leftInput: isIconLeft, rightInput: isIconRight }"
         v-model="input_data"
         :placeholder="placeholder"
         class="w-100 py-1 px-3"
@@ -10,7 +10,7 @@
 
     <!-- Container no ícone -->
     <div
-        v-bind:class="{leftIcon: isIconLeft, rightIcon: isIconRight}"
+        v-bind:class="{ leftIcon: isIconLeft, rightIcon: isIconRight }"
         class="icon-container d-flex align-items-center justify-content-center"
     >
         <!-- Ícone passado como input -->
@@ -26,7 +26,7 @@ import { Component, Prop, Watch } from 'vue-property-decorator';
 @Component
 export default class Input extends Vue {
     // Propriedades de entrada
-    @Prop({default: 'left'}) side?: 'right'|'left';
+    @Prop({ default: 'left' }) side?: 'right'|'left';
     @Prop() placeholder?: string;
 
     //Armazena os dados digitados
