@@ -1,2 +1,3 @@
 /* Arquivo base que reúne todos os css's secundários */
 @import url('./setup.css');
+@import url('./global.css');

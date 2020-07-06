@@ -1,14 +1,17 @@
 <template>
-  <div class="w-100 d-flex">
-    <div class="w-50 d-flex justify-content-start">
+  <!-- Container da barra de navegação -->
+  <div class="w-100 d-flex align-items-center pt-4 pb-2 px-5">
+    <!-- Logo -->
+    <div class="d-flex justify-content-start w-50">
       <img 
         v-bind:class="{ search:!pesquisa, nosearch:pesquisa }"
         id="logo"
-        class="nosearch mt-3 ml-5"
+        class="nosearch"
         src="@/assets/Logo_CPI.svg"
       />
     </div>
-    <div class="w-50 d-flex justify-content-end mt-5">
+    <!-- Login e cadastro -->
+    <div class="d-flex justify-content-end w-50">
       <button
         id="b_lo"
         v-bind:class="{ btn_pesquisa:pesquisa, btn_nopesquisa:!pesquisa }"
@@ -21,18 +24,20 @@
         v-bind:class="{ btn_pesquisa:pesquisa, btn_nopesquisa:!pesquisa }"
         @click.stop="cadastro = !cadastro"
         id="b_ca"
-        class="btn ml-3 mr-5 text-white ubuntu font-weight-bold"
+        class="btn ml-3 text-white ubuntu font-weight-bold"
       >
         Cadastro
-      </button> 
+      </button>
     </div>
 
+    <!-- Drawer de login -->
     <v-navigation-drawer
       v-model="drawer"
       absolute
       right
       temporary
     >
+      <!-- Formulário de login -->
       <form class="h-100 w-100 d-flex align-items-center justify-content-center flex-column">
           <h1 class="ubuntu font-weight-bold mb-5" >Login</h1>
           <div class="d-flex w-100">
@@ -43,7 +48,7 @@
             <input required type="password" placeholder="senha" class=" input_form_gray ubuntu input_form pl-3 w-100 mt-3"/>
           </div>
           <div class="w-100 px-2 my-3">
-            <!-- Custom select -->
+            <!-- Custom select TESTE -->
             <CustomInput placeholder="Teste" name="Teste" >
               <span class="text-white">></span>
             </CustomInput>
@@ -55,12 +60,14 @@
       </form>
     </v-navigation-drawer>
 
+    <!-- Drawer de cadastro -->
     <v-navigation-drawer
       v-model="cadastro"
       absolute
       right
       temporary
     >
+      <!-- Formulário de cadastro -->
       <form class="h-100 w-100 d-flex align-items-center justify-content-center flex-column px-2">
         <h1 class="ubuntu font-weight-bold mb-5">Cadastro</h1>
         <input id="cas_user" type="text" placeholder="Nome de usuário" required class="ubuntu input_form w-100 bord_input pl-2"/>
@@ -95,8 +102,8 @@ import Inputs from './Input.vue';
 export default class Nav extends Vue {
   @Prop() pesquisa!: boolean
 
-  drawer=false;
-  cadastro=false;
+  drawer = false;
+  cadastro = false;
 
 }
 </script>
@@ -106,13 +113,13 @@ export default class Nav extends Vue {
 
 .btns_sub{
   background-color: var(--primary);
-  border-radius:6px;
-  font-size:19px;
+  border-radius: 6px;
+  font-size: 19px;
 }
 
 #button_proxi{
-  width:180px;
-  height:50px;
+  width: 180px;
+  height: 50px;
   background-color: var(--primary);
 }
 
@@ -121,24 +128,16 @@ export default class Nav extends Vue {
   border-bottom-left-radius: 0px;
 }
 
-.input_form{
-  border-radius:5px;
-  height:35px;
-}
+
 
 #button_submit{
-  width:120px;
-  height:45px;
+  width: 120px;
+  height: 45px;
 }
 
 #link_esqueci{
-  font-size:11px;
+  font-size: 11px;
   color: #477878;
-}
-
-.input_form_gray{
-  background-color:#E1E1E1;
-  outline:none;
 }
 
 #quadrado{
@@ -152,49 +151,41 @@ export default class Nav extends Vue {
     border-bottom-left-radius: 0px;
 }
 
+/* Estilo da logo quando o usuário não estiver pesquisando */
 .nosearch{
-  transition: max-width 0.4s;
+  transition: max-width 0.2s;
   overflow: hidden;
-  max-width: 150px;
+  max-width: 130px;
 }
 
+/* Estilo da logo quando o usuário estiver pesquisando */
 .search{
-  transition: max-width 0.4s;
+  transition: max-width 0.2s;
   overflow: hidden;
   max-width: 100px;
 }
 
+/* Estilo dos botões de login e cadastro quando estiver pesquisando */
 .btn_nopesquisa{
-  outline:none;
-  transition: max-width 0.4s, height 0.4s;
+  outline: none;
+  transition: width 0.2s, height 0.2s;
   overflow: hidden;
   font-size: 18px;
-  height:40px;
-  max-width:110px;
+  height: 40px;
+  width: 110px;
 }
-
-
+/* Estilos quando não estiver pesquisando */
 .btn_pesquisa{
-  outline:none;
-  transition: max-width 0.4s, height 0.4s;
+  outline: none;
+  transition: width 0.2s, height 0.2s;
   overflow: hidden;
   font-size: 21px;
-  height:50px;
-  max-width:120px;
+  height: 50px; 
+  width: 120px;
 }
 
 #b_ca{
   background-color: var(--primary);
-}
-
-.ubuntu{
-  font-family: Ubuntu
-}
-
-.bord_input{
-  border-color: var(--primary);
-  border-style:solid !important;
-  outline:none;
 }
 
 </style>
